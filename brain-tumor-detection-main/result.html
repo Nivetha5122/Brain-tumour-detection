@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="result-section">
+    <div class="container">
+        <div class="result-header">
+            <h2>Analysis Results</h2>
+            <p>Here are the results of your MRI scan analysis</p>
+        </div>
+        
+        <div class="result-content">
+            <div class="image-preview">
+                <h3>Your MRI Scan</h3>
+                <img src="{{ url_for('static', filename=image_path) }}" alt="Uploaded MRI Scan" width="300" />
+
+              
+            </div>
+            
+            <div class="result-details">
+                <div class="result-card">
+                    <h3>Diagnosis</h3>
+                    <div class="diagnosis {{ 'positive' if result.class != 'No Tumor' else 'negative' }}">
+                        <span>{{ result.class }}</span>
+                        <span class="confidence">{{ "%.2f"|format(result.confidence) }}% confidence</span>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h3>About {{ result.class }}</h3>
+                    <p>{{ result.info.description }}</p>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>Symptoms</h4>
+                        <p>{{ result.info.symptoms }}</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Recommended Treatment</h4>
+                        <p>{{ result.info.treatment }}</p>
+                    </div>
+                </div>
+                
+                <div class="disclaimer">
+                    <p><strong>Disclaimer:</strong> This analysis is provided for informational purposes only and should not be considered a substitute for professional medical advice. Please consult with a qualified healthcare provider for diagnosis and treatment.</p>
+                </div>
+                
+                <a href="{{ url_for('predict') }}" class="btn btn-primary">Analyze Another Scan</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

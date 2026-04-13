@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+    <div>
+        <h1>AI Brain Tumor Detection</h1>
+        <p>Using machine learning </p>
+        <a href="{{ url_for('predict') }}" class="btn btn-primary">Start</a>
+    </div>
+</section>
+
+<section class="about-section">
+    <h2>Technology</h2>
+
+    <div class="about-grid">
+
+        <div class="about-card">
+            <i class="fas fa-brain fa-2x"></i>
+            <h3>EfficientNet</h3>
+            <p>Advanced CNN model</p>
+        </div>
+
+        <div class="about-card">
+            <i class="fas fa-bolt fa-2x"></i>
+            <h3>Fast</h3>
+            <p>Instant results</p>
+        </div>
+
+        <div class="about-card">
+            <i class="fas fa-chart-line fa-2x"></i>
+            <h3>Accurate</h3>
+            <p>High precision</p>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="animate-fade-in">Advanced Brain Tumor Detection</h1>
+        <p class="animate-slide-up">Using cutting-edge AI to analyze MRI scans and detect tumors with high accuracy.</p>
+        <a href="{{ url_for('predict') }}" class="btn btn-primary animate-slide-up">Detect Tumor Now</a>
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="container">
+        <h2>About Our Technology</h2>
+        <div class="about-grid">
+            <div class="about-card animate-fade-in">
+                <i class="fas fa-brain"></i>
+                <h3>Deep Learning Model</h3>
+                <p>Our convolutional neural network is trained on thousands of MRI scans to accurately classify brain tumors.</p>
+            </div>
+            <div class="about-card animate-fade-in" style="animation-delay: 0.2s;">
+                <i class="fas fa-bolt"></i>
+                <h3>Fast Results</h3>
+                <p>Get your analysis in seconds with our optimized prediction pipeline.</p>
+            </div>
+            <div class="about-card animate-fade-in" style="animation-delay: 0.4s;">
+                <i class="fas fa-chart-line"></i>
+                <h3>High Accuracy</h3>
+                <p>Our model achieves over 95% accuracy in tumor classification.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works">
+    <div class="container">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step animate-slide-left">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Upload MRI Scan</h3>
+                    <p>Simply upload your brain MRI scan in JPG or PNG format.</p>
+                </div>
+            </div>
+            <div class="step animate-slide-left" style="animation-delay: 0.2s;">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>AI Analysis</h3>
+                    <p>Our deep learning model processes the image to detect abnormalities.</p>
+                </div>
+            </div>
+            <div class="step animate-slide-left" style="animation-delay: 0.4s;">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Get Results</h3>
+                    <p>Receive a detailed report with tumor classification and information.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Check Your MRI Scan?</h2>
+        <p>Early detection can make all the difference. Get started now.</p>
+        <a href="{{ url_for('predict') }}" class="btn btn-secondary">Upload MRI Scan</a>
+    </div>
+</section>
+{% endblock %}

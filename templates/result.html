@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="result-container">
+
+    <div class="result-box">
+        <h3>Uploaded Image</h3>
+        <img src="{{ url_for('static', filename=image_path) }}">
+    </div>
+
+    <div class="result-box">
+        <h3>Prediction</h3>
+        <h2>{{ result.class }}</h2>
+        <p>Confidence: {{ result.confidence }}%</p>
+
+        <h3>Description</h3>
+        <p>{{ result.info.description }}</p>
+
+        <h3>Symptoms</h3>
+        <p>{{ result.info.symptoms }}</p>
+
+        <h3>Treatment</h3>
+        <p>{{ result.info.treatment }}</p>
+    </div>
+
+</div>
+
+{% endblock %}
